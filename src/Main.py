@@ -1,5 +1,8 @@
 import time
-
+import os
+import sys
+cur_path=os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, cur_path+"/..")
 # import src.problem.DTLZ1 as DTLZ1
 import src.problem.KUR as KUR
 # import src.problem.SCH as SCH
@@ -21,7 +24,8 @@ class MOEAD:
     # 使用那种方式、DE/GA 作为进化算法
     # GA_DE_Utils = Utils.DE_Utils
     GA_DE_Utils = Utils.GA_Utils
-
+    # 参数H控制权向量
+    h = 5
     # 种群大小，取决于vector_csv_file/下的xx.csv
     Pop_size = -1
     # 最大迭代次数
